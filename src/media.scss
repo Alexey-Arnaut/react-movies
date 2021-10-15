@@ -1,3 +1,12 @@
+@media (max-width: 1450px) {
+    
+    .person {
+
+        .swiper-slide {
+            width: 25%;
+        }
+    }
+}
 
 @media (max-width: 1350px) {
 
@@ -5,16 +14,6 @@
 
         .swiper-slide {
             width: 30%;
-        }
-    }
-}
-
-@media (max-width: 1450px) {
-    
-    .person {
-
-        .swiper-slide {
-            width: 25%;
         }
     }
 }
@@ -51,6 +50,10 @@
         img {
             width: 200px;
         }
+    }
+
+    .trailer__video {
+        height: 400px;
     }
 }
 

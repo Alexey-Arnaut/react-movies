@@ -3,6 +3,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const Person = ({ movieInfoPerson, title }) => {
+
   return (
     <>
       {movieInfoPerson.length > 0 ? (

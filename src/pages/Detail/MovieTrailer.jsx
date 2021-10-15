@@ -10,8 +10,6 @@ const MovieTrailer = ({ movieTrailer }) => {
             <iframe
               key={index}
               className="trailer__video"
-              width="90%"
-              height="800px"
               src={`https://www.youtube.com/embed/${trailer.key}`}
               title="YouTube video player"
               frameBorder="0"

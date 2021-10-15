@@ -20,6 +20,7 @@
 
 .movie-list__content-img {
     max-width: 265px;
+    position: relative;
 
     img {
         width: 265px;
@@ -41,4 +42,12 @@
     text-align: center;
     color: #FFFFFF;
     margin-top: 10px;
+}
+
+.movie-list__content-estimation {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 10px 25px;
+    border-radius: 10px;
 }

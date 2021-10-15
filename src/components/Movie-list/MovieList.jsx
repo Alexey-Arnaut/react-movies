@@ -34,6 +34,16 @@ const MovieList = ({ moviesList, title, getId, category }) => {
                       ) : (
                         ""
                       )}
+                      <div
+                        className="movie-list__content-estimation"
+                        style={
+                          movie.vote_average > 7
+                            ? { backgroundColor: "#1BC47D" }
+                            : { backgroundColor: "#E44F4F" }
+                        }
+                      >
+                        {movie.vote_average.toFixed(1)}
+                      </div>
                     </div>
                     <h3 className="movie-list__content-title">
                       {movie.title || movie.name}

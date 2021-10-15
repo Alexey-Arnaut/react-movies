@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Home from "./pages/Home";
 import Header from "./components/Header/Header";
@@ -26,7 +26,7 @@ function App() {
             <Home getId={getId} />
           </Route>
           <Route path="/detail/:id">
-            <Detail getId={getId} movieId={movieId} />
+            <Detail movieId={movieId} getId={getId} />
           </Route>
         </Switch>
       </main>
