@@ -1,0 +1,159 @@
+.movie-list {
+
+    .swiper-slide {
+        width: 18%;
+    }
+}
+
+.movie-item {
+    width: 300px;
+    cursor: pointer;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    transition: 0.5s;
+
+    &:hover {
+        transform: translateY(5px);
+
+        .movie-item__title {
+            color: #E44F4F;
+        }
+    }
+}
+
+.movie-item__img {
+    width: 300px;
+    height: 450px;
+
+    img {
+        width: 300px;
+        height: 450px;
+        border-radius: 20px;
+    }
+}
+
+.movie-item__img--none {
+    border: 2px solid #2C343F;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    path {
+        fill: #2C343F;
+    }
+}
+
+.movie-item__average {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.movie-item__average-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.movie-item__title {
+    font-size: 22px;
+    margin-top: 10px;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+@media (max-width: 1670px) {
+
+    .movie-list {
+
+        .swiper-slide {
+            width: 22%;
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+
+    .movie-list {
+
+        .swiper-slide {
+            width: 30%;
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+
+    .movie-list {
+
+        .swiper-slide {
+            width: 45%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .movie-item {
+        width: 200px;
+    }
+
+    .movie-item__img {
+        width: 200px;
+        height: 300px;
+
+        img {
+            width: 200px;
+            height: 300px;
+            border-radius: 20px;
+        }
+    }
+
+    .movie-list {
+
+        .swiper-slide {
+            width: 35%;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+
+    .movie-list {
+
+        .swiper-slide {
+            width: 45%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+
+    .movie-list {
+
+        .swiper-slide {
+            width: 55%;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+
+    .movie-list {
+
+        .swiper-slide {
+            width: 70%;
+        }
+    }
+}

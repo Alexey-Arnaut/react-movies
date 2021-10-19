@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "./header.scss";
 
 const Header = () => {
   const headerRef = useRef();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const stickyHeader = () => {
@@ -22,9 +23,9 @@ const Header = () => {
 
   return (
     <header className="header" ref={headerRef}>
-      <div className="header-inner">
-        <Link to="/">
-          <div className="header__logo">
+      <Link to="/">
+        <div className="header__logo">
+          <div className="header__logo-icon">
             <svg
               width="60"
               height="44"
@@ -41,18 +42,29 @@ const Header = () => {
                 fill="#FF5576"
               />
             </svg>
-            <p className="header__logo-title">React movies</p>
           </div>
-        </Link>
+          <p className="header__logo-title">React movies</p>
+        </div>
+      </Link>
 
-        <nav className="nav">
-          <ul className="nav__list">
-            <li className="nav__list-item">Фильмы</li>
-            <li className="nav__list-item">Сериалы</li>
-            <li className="nav__list-item">Поиск</li>
-          </ul>
-        </nav>
-      </div>
+      <nav className="nav">
+        <ul className="nav__list">
+          <li
+            className={`nav__list-item ${
+              pathname === "/movie" ? "nav__list-item--active" : ""
+            }`}
+          >
+            <Link to="/movie">Фильмы</Link>
+          </li>
+          <li
+            className={`nav__list-item ${
+              pathname === "/tv" ? "nav__list-item--active" : ""
+            }`}
+          >
+            <Link to="/tv">Сериалы</Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };

@@ -1,0 +1,152 @@
+.search-movies {
+    height: 50vh;
+    min-height: 400px;
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15px;
+    margin-top: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgb(#000000, 0.5);
+        left: 0;
+        top: 0;
+    }
+}
+
+.found-movies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.found-lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 15px 0;
+    padding: 15px;
+    gap: 15px;
+}
+
+.found-movies__more {
+    margin: 15px 0;
+    padding: 10px 40px;
+    border: 2px solid #E44F4F;
+    border-radius: 20px;
+    position: relative;
+
+    &:hover {
+        background-color: rgb(#E44F4F, 0.5);
+    }
+
+    &:active {
+        bottom: -1px;
+    }
+}
+
+.search-movies__form {
+    z-index: 1;
+    color: #FFFFFF;
+}
+
+.search-movies__form-title {
+    font-size: 36px;
+}
+
+.search-movies__form-buttons {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-movies__form-button {
+    padding: 10px 40px;
+    border: 2px solid #E44F4F;
+    border-radius: 20px;
+    margin-right: 15px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        background-color: rgb(#E44F4F, 0.5);
+    }
+}
+
+.search-movies__form-button--active {
+    background-color: rgb(#E44F4F, 0.5);
+}
+
+.search-movies__form-field {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 20px;
+    position: relative;
+
+    border: 2px solid #E44F4F;
+
+    &::placeholder {
+        color: #FFFFFF;
+    }
+
+    &:focus {
+        background-color: rgb(#E44F4F, 0.5);
+    }
+}
+
+.button-search {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.error {
+    animation: error 0.5s linear;
+}
+
+@keyframes error {
+    0% {
+        right: 10px;
+        border-color: #e44f4f;
+    }
+
+    25% {
+        right: -10px;
+        border-color: #e44f4f;
+    }
+
+    50% {
+        right: 10px;
+        border-color: #e44f4f;
+    }
+
+    75% {
+        right: -10px;
+        border-color: #e44f4f;
+    }
+
+    100% {
+        right: 0;
+        border-color: #e44f4f;
+    }
+}
+
+@media (max-width: 1000px) {
+    
+    .found-lists {
+        justify-content: center;
+    }
+}

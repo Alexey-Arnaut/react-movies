@@ -1,0 +1,16 @@
+.videos {
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.videos__trailer {
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+@media (max-width: 1024px) {
+
+    .videos__trailer {
+        height: 400px;
+    }
+}

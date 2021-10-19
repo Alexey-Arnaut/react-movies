@@ -1,15 +1,18 @@
 import React from "react";
 
-const MovieTrailer = ({ movieTrailer }) => {
+import "./movie-videos.scss";
+
+const MovieVideos = ({ details }) => {
   return (
     <>
-      {movieTrailer.length > 0 ? (
-        <section className="section trailer">
-          <h2 className="trailer__title">Трейлеры</h2>
-          {movieTrailer.map((trailer, index) => (
+      {details.results.length > 0 && (
+        <>
+          {details.results.map((trailer, index) => (
             <iframe
               key={index}
-              className="trailer__video"
+              className="videos__trailer"
+              width="100%"
+              height="600px"
               src={`https://www.youtube.com/embed/${trailer.key}`}
               title="YouTube video player"
               frameBorder="0"
@@ -17,12 +20,10 @@ const MovieTrailer = ({ movieTrailer }) => {
               allowFullScreen
             ></iframe>
           ))}
-        </section>
-      ) : (
-        ""
+        </>
       )}
     </>
   );
 };
 
-export default MovieTrailer;
+export default MovieVideos;
