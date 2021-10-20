@@ -6,7 +6,7 @@ import "./movie-person.scss";
 
 const MoviePerson = ({ details }) => {
   return (
-    <Swiper slidesPerView="auto" spaceBetween={10} loop={true}>
+    <Swiper slidesPerView="auto" spaceBetween={10}>
       {details.map((person, index) => (
         <SwiperSlide key={index}>
           <div className="person__item">

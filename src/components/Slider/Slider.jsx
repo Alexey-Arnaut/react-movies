@@ -30,7 +30,7 @@ const Slider = ({ sliderItems, category }) => {
 
   return (
     <section className="section slider">
-      <Swiper slidesPerView={1} loop={true}>
+      <Swiper slidesPerView={1}>
         {sliderItems.map((slide, index) => (
           <SwiperSlide key={index}>
             <div

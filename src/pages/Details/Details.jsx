@@ -65,20 +65,24 @@ const Details = () => {
               <MovieVideos details={movieDetails.videos} />
             </section>
           )}
-          <section className="section details similar">
-            <h2 className="details__title">Похожие фильмы</h2>
-            <MovieList
-              list={movieDetails.similar.results}
-              category={category}
-            />
-          </section>
-          <section className="section details recommendations">
-            <h2 className="details__title">Рекомендуемые фильмы</h2>
-            <MovieList
-              list={movieDetails.recommendations.results}
-              category={category}
-            />
-          </section>
+          {movieDetails.similar.results.length > 0 && (
+            <section className="section details similar">
+              <h2 className="details__title">Похожие фильмы</h2>
+              <MovieList
+                list={movieDetails.similar.results}
+                category={category}
+              />
+            </section>
+          )}
+          {movieDetails.recommendations.results.length > 0 && (
+            <section className="section details recommendations">
+              <h2 className="details__title">Рекомендуемые фильмы</h2>
+              <MovieList
+                list={movieDetails.recommendations.results}
+                category={category}
+              />
+            </section>
+          )}
         </>
       )}
     </>
