@@ -1,8 +1,10 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import "./movie-info.scss";
 
-const MovieInfo = ({ details }) => {
+const MovieInfo = ({ details, category }) => {
   return (
     <section
       className="section movie-info"
@@ -20,9 +22,9 @@ const MovieInfo = ({ details }) => {
         {details.genres && (
           <div className="movie-info__genres">
             {details.genres.map((genre) => (
-              <p className="movie-info__genre" key={genre.id}>
+              <Link to={`/genres/${category}/${genre.id}`} className="movie-info__genre" key={genre.id}>
                 {genre.name}
-              </p>
+              </Link>
             ))}
           </div>
         )}

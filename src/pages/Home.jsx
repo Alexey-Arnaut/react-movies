@@ -67,7 +67,6 @@ const Home = () => {
       );
       setFoundMovies(foundMoviesRes.data.results);
       setTotalPage(foundMoviesRes.data.total_pages);
-      console.log(foundMoviesRes.data);
     } else {
       inputRef.current.classList.add("error");
 
@@ -85,7 +84,7 @@ const Home = () => {
     }
   }, [index, category]);
 
-  const seeMore = async () => {
+  const showMore = async () => {
     setPage(++page);
 
     const foundMoviesRes = await axios.get(
@@ -121,7 +120,7 @@ const Home = () => {
                 ))}
               </div>
               {totalPage > 1 && totalPage >= page ? (
-                <button className="found-movies__more" onClick={seeMore}>
+                <button className="found-movies__more" onClick={showMore}>
                   Показать еще
                 </button>
               ) : null}

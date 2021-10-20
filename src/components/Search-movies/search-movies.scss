@@ -56,12 +56,15 @@
 }
 
 .search-movies__form {
+    max-width: 600px;
+    width: 100%;
     z-index: 1;
     color: #FFFFFF;
 }
 
 .search-movies__form-title {
     font-size: 36px;
+    text-align: center;
 }
 
 .search-movies__form-buttons {
@@ -72,6 +75,7 @@
 }
 
 .search-movies__form-button {
+    width: 100%;
     padding: 10px 40px;
     border: 2px solid #E44F4F;
     border-radius: 20px;

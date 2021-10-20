@@ -42,7 +42,7 @@ const Details = () => {
       {loading && <Preloader />}
       {movieDetails && (
         <>
-          <MovieInfo details={movieDetails} />
+          <MovieInfo details={movieDetails} category={category} />
           {movieDetails.credits.cast.length > 0 && (
             <section className="section details person">
               <h2 className="details__title">Актёрский состав</h2>

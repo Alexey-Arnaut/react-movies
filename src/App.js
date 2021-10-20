@@ -3,9 +3,10 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
-import Catalog from "./pages/Catalog";
-import Details from "./pages/Details/Details";
 import Home from "./pages/Home";
+import Details from "./pages/Details/Details";
+import Catalog from "./pages/Catalog";
+import Credits from "./pages/Genres/Genres";
 
 function App() {
   return (
@@ -18,8 +19,11 @@ function App() {
         <Route exact path="/:category/:id">
           <Details />
         </Route>
-        <Route path="/:category" exact >
+        <Route path="/:category" exact>
           <Catalog />
+        </Route>
+        <Route path="/genres/:category/:genre" exact>
+          <Credits />
         </Route>
       </main>
     </div>

@@ -27,7 +27,7 @@ const Slider = ({ sliderItems, category }) => {
       console.log("error " + err);
     }
   };
-
+  //
   return (
     <section className="section slider">
       <Swiper slidesPerView={1}>
@@ -36,7 +36,7 @@ const Slider = ({ sliderItems, category }) => {
             <div
               className="sldier__item"
               style={{
-                backgroundImage: `url(https://image.tmdb.org/t/p/original/${slide.backdrop_path})`,
+                backgroundImage: `url(https://image.tmdb.org/t/p/original/${slide.backdrop_path}`,
               }}
             >
               <div className="sldier__item-content content">
