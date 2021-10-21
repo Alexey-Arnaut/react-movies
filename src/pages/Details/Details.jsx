@@ -15,7 +15,7 @@ const Details = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const { category, id } = useParams();
+  const { category = "", id = "" } = useParams();
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -31,7 +31,7 @@ const Details = () => {
 
         setMovieDetails(infoRes.data);
       } catch (err) {
-        console.log("error" + " " + err);
+        console.log("error "  + err);
       }
     };
     getMovieDetails();

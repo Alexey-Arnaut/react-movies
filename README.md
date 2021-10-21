@@ -1,1 +1,1 @@
-# [React movies](https://ecstatic-jennings-464985.netlify.app/)
+# [React movies](https://serene-fermi-c17d17.netlify.app/)

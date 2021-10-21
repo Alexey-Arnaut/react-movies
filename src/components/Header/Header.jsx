@@ -1,28 +1,15 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState } from "react";
 
 import { Link, useLocation } from "react-router-dom";
 
 import "./header.scss";
 
 const Header = () => {
-  const headerRef = useRef();
+  const [activeHeader, setActiveHeader] = useState(false);
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    const stickyHeader = () => {
-      if (document.documentElement.scrollTop > 100) {
-        headerRef.current.classList.add("header--sticky");
-      } else {
-        headerRef.current.classList.remove("header--sticky");
-      }
-    };
-    window.addEventListener("scroll", stickyHeader);
-
-    return () => window.removeEventListener("scroll", stickyHeader);
-  }, []);
-
   return (
-    <header className="header" ref={headerRef}>
+    <header className={`header ${activeHeader ? "header--active" : ""}`}>
       <Link to="/">
         <div className="header__logo">
           <div className="header__logo-icon">
@@ -65,6 +52,15 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+
+      <button
+        className={`header__button ${
+          activeHeader ? "header__button--active" : ""
+        }`}
+        onClick={() => setActiveHeader(!activeHeader)}
+      >
+        <span></span>
+      </button>
     </header>
   );
 };

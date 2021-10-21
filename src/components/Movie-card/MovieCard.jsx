@@ -1,7 +1,11 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 
 import "./movie-card.scss";
+
+import LazyLoad from "react-lazyload";
+import PlaceholderComponent from "../Placheloder-component/PlaceholderComponent";
 
 const MovieCard = ({ item, category }) => {
   return (
@@ -13,10 +17,16 @@ const MovieCard = ({ item, category }) => {
           }`}
         >
           {item.poster_path !== null ? (
-            <img
-              src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
-              alt=""
-            />
+            <LazyLoad
+              placeholder={<PlaceholderComponent />}
+              debounce={500}
+              once
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
+                alt=""
+              />
+            </LazyLoad>
           ) : (
             <svg
               width="181"

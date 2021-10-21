@@ -1,5 +1,6 @@
 .header {
     position: fixed;
+    top: 0;
     height: 80px;
     display: flex;
     align-items: center;
@@ -9,12 +10,29 @@
     margin: 0 auto;
     padding: 15px;
     z-index: 10;
+    background: #292D32;
     transition: 0.5s;
 }
 
-.header--sticky {
+.header--active {
+    bottom: 0;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: #292D32;
-    border-color: transparent;
+
+    .nav {
+        display: flex;
+    }
+
+    .nav__list {
+        flex-direction: column;
+    }
+
+    .nav__list-item {
+        margin: 15px 0 0;
+    }
 }
 
 .header__logo {
@@ -87,5 +105,110 @@
 
     a {
         color: #E44F4F;
+    }
+}
+
+.header__button {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    right: 15px;
+    top: 25px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        background-color: #FFFFFF;
+        width: 100%;
+        height: 4px;
+        border-radius: 20px;
+        transition: 0.5s;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 4px;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            left: 0;
+            transition: 0.5s;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+    }
+
+    &:hover {
+
+        span {
+            width: 50%;
+
+            &::before {
+                left: 10px;
+            }
+
+            &::after {
+                left: -10px;
+            }
+        }
+    }
+}
+
+.header__button--active {
+
+    span {
+        background-color: transparent;
+
+        &::before {
+            top: 13px;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            bottom: 13px;
+            transform: rotate(-45deg);
+        }
+    }
+
+    &:hover {
+
+        span {
+
+            &::before {
+                left: 0;
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                left: 0;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+
+    .nav {
+        display: none;
+    }
+
+    .header__button {
+        display: flex;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .header__logo-title {
+        font-size: 30px;
     }
 }

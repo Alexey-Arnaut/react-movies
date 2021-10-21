@@ -157,3 +157,12 @@
         }
     }
 }
+
+@keyframes blick {
+    0% {
+        transform: translateX(-1000px) skewX(-45deg);
+    }
+    100% {
+        transform: translateX(1000px) skewX(-45deg);
+    }
+}

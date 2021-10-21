@@ -2,22 +2,22 @@ import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "./slider.scss";
 
 import Modal from "../Modal/Modal";
-import { Link } from "react-router-dom";
 
 const Slider = ({ sliderItems, category }) => {
   const [active, setActive] = useState(false);
   const [trailer, setTrailer] = useState(null);
 
   const showTrailer = async (id) => {
-    setActive(true);
-
     try {
+      setActive(true);
+      
       const trailerRes = await axios.get(
         `https://api.themoviedb.org/3/${category}/${id}/videos?api_key=190eda9df5172483ad9af3e885997915&language=ru`
       );
@@ -27,7 +27,7 @@ const Slider = ({ sliderItems, category }) => {
       console.log("error " + err);
     }
   };
-  //
+
   return (
     <section className="section slider">
       <Swiper slidesPerView={1}>
@@ -36,7 +36,11 @@ const Slider = ({ sliderItems, category }) => {
             <div
               className="sldier__item"
               style={{
-                backgroundImage: `url(https://image.tmdb.org/t/p/original/${slide.backdrop_path}`,
+                backgroundImage: `${
+                  slide.backdrop_path !== null
+                    ? `url(https://image.tmdb.org/t/p/original/${slide.backdrop_path}`
+                    : ""
+                }`,
               }}
             >
               <div className="sldier__item-content content">

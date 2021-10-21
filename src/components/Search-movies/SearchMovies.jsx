@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import "./search-movies.scss";
 
 const SearchMovies = ({
@@ -12,6 +14,7 @@ const SearchMovies = ({
   setValue,
   getMovies,
   inputRef,
+  category
 }) => {
   const toogleButton = (index) => {
     setIndex(index);
@@ -80,13 +83,17 @@ const SearchMovies = ({
         >
           Найти
         </button>
-        {foundMovies !== null && (
+        {foundMovies !== null ? (
           <button
             className="search-movies__form-button button-search"
             onClick={reset}
           >
             Сбросить
           </button>
+        ) : (
+          <Link to={`/genres/${category}/18`} className="search-movies__form-link">
+            Поиск по жанру
+          </Link>
         )}
       </div>
     </section>

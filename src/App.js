@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import Details from "./pages/Details/Details";
-import Catalog from "./pages/Catalog";
+import Catalog from "./pages/Catalog/Catalog";
 import Credits from "./pages/Genres/Genres";
 
 function App() {

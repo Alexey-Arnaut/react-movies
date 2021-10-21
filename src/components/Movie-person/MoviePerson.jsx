@@ -4,6 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "./movie-person.scss";
 
+import LazyLoad from "react-lazyload";
+import PlaceholderComponent from "../Placheloder-component/PlaceholderComponent";
+
 const MoviePerson = ({ details }) => {
   return (
     <Swiper slidesPerView="auto" spaceBetween={10}>
@@ -16,10 +19,16 @@ const MoviePerson = ({ details }) => {
               }`}
             >
               {person.profile_path !== null ? (
-                <img
-                  src={`https://image.tmdb.org/t/p/w300${person.profile_path}`}
-                  alt=""
-                />
+                <LazyLoad
+                  placeholder={<PlaceholderComponent styles="img-loader" />}
+                  debounce={500}
+                  once
+                >
+                  <img
+                    src={`https://image.tmdb.org/t/p/w300${person.profile_path}`}
+                    alt=""
+                  />
+                </LazyLoad>
               ) : (
                 <svg
                   width="250"
@@ -37,13 +46,9 @@ const MoviePerson = ({ details }) => {
             </div>
             <h3 className="person__item-title">{person.name}</h3>
             {person.department && (
-              <div className="person__item-department">
-                {person.department}
-              </div>
+              <div className="person__item-department">{person.department}</div>
             )}
-            {person.job && (
-              <div className="person__item-job">{person.job}</div>
-            )}
+            {person.job && <div className="person__item-job">{person.job}</div>}
           </div>
         </SwiperSlide>
       ))}

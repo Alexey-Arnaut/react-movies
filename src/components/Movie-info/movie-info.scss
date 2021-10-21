@@ -45,4 +45,9 @@
     &:last-child {
         margin-right: 0;
     }
+
+    &:hover {
+        border-color: #E44F4F;
+        background-color: rgb(#E44F4F, 0.5);
+    }
 }
